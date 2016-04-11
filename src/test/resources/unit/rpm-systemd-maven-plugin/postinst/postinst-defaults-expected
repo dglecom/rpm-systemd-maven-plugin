@@ -1,0 +1,9 @@
+
+test -f /etc/sysconfig/test-module || echo 'JAVA_OPTS=""' > /etc/sysconfig/test-module
+getent group test-module || groupadd -r test-module >/dev/null 2>&1
+getent passwd test-module || useradd -s /bin/false -d /var/lib/test-module -g test-module -r -m test-module >/dev/null 2>&1
+
+test -d /var/lib/test-module || mkdir /var/lib/test-module >/dev/null 2>&1
+test -d /var/lib/test-module && chown -R test-module:test-module /var/lib/test-module >/dev/null 2>&1
+
+/usr/bin/systemctl preset test-module.service >/dev/null 2>&1

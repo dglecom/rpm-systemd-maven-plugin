@@ -1,0 +1,15 @@
+
+test -f /environmentfile || echo 'JAVA_OPTS=""' > /environmentfile
+getent group unknown-group || groupadd -r unknown-group >/dev/null 2>&1
+getent passwd makubi || useradd -s /bin/false -d /path/to/workingDirectory -g unknown-group -r -m makubi >/dev/null 2>&1
+
+test -d /path/to/workingDirectory || mkdir /path/to/workingDirectory >/dev/null 2>&1
+test -d /path/to/workingDirectory && chown -R makubi:unknown-group /path/to/workingDirectory >/dev/null 2>&1
+
+/usr/bin/systemctl preset some.service >/dev/null 2>&1
+
+test -d /etc/my-configuration || mkdir /etc/my-configuration >/dev/null 2>&1
+test -d /etc/my-configuration && chown -R root:root /etc/my-configuration >/dev/null 2>&1
+
+test -d /var/log/log-directory || mkdir /var/log/log-directory >/dev/null 2>&1
+test -d /var/log/log-directory && chown -R test-module:test-module /var/log/log-directory >/dev/null 2>&1

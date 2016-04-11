@@ -1,0 +1,15 @@
+
+[Unit]
+Description=Test description
+After=network.target
+
+[Service]
+EnvironmentFile=/environmentfile
+User=makubi
+Group=unknown-group
+PermissionsStartOnly=true
+WorkingDirectory=/path/to/workingDirectory
+ExecStart=/somewhere/java $JAVA_OPTS -jar /jar/is/somewhere.jar
+
+[Install]
+WantedBy=multi-user.target

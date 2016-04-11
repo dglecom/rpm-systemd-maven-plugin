@@ -1,0 +1,15 @@
+
+[Unit]
+Description=Test description
+After=network.target
+
+[Service]
+EnvironmentFile=/etc/sysconfig/test-module
+User=test-module
+Group=test-module
+PermissionsStartOnly=true
+WorkingDirectory=/var/lib/test-module
+ExecStart=/usr/bin/java $JAVA_OPTS -jar /usr/share/test-module/test-module-1.0-SNAPSHOT.jar
+
+[Install]
+WantedBy=multi-user.target

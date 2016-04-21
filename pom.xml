@@ -4,7 +4,7 @@
 
     <groupId>de.douglas.maven.plugin</groupId>
     <artifactId>rpm-systemd-maven-plugin</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
     <name>RPM Systemd Maven Plugin</name>
@@ -200,7 +200,7 @@
         <url>https://github.com/dglecom/rpm-systemd-maven-plugin</url>
         <connection>scm:git:git@github.com:dglecom/rpm-systemd-maven-plugin.git</connection>
         <developerConnection>scm:git:git@github.com:dglecom/rpm-systemd-maven-plugin.git</developerConnection>
-        <tag>rpm-systemd-maven-plugin-1.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>

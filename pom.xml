@@ -190,6 +190,14 @@
         </license>
     </licenses>
 
+    <developers>
+        <developer>
+            <id>douglas</id>
+            <name>Perfumery Douglas GmbH</name>
+            <url>https://github.com/dglecom</url>
+        </developer>
+    </developers>
+
     <scm>
         <url>https://github.com/dglecom/rpm-systemd-maven-plugin</url>
         <connection>scm:git:git@github.com:dglecom/rpm-systemd-maven-plugin.git</connection>

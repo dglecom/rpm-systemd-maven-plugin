@@ -15,7 +15,7 @@ The plugin currently supports two goals:
 <plugin>
     <groupId>de.douglas.maven.plugin</groupId>
     <artifactId>rpm-systemd-maven-plugin</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <executions>
         <execution>
             <phase>generate-resources</phase>

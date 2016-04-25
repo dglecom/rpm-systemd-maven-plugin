@@ -3,6 +3,9 @@
 This plugin can be used to generate files for RPM packages and systemd
 services.
 
+[![Build Status](https://travis-ci.org/dglecom/rpm-systemd-maven-plugin.svg?branch=master)](https://travis-ci.org/dglecom/rpm-systemd-maven-plugin)
+[![Maven Central](https://img.shields.io/maven-central/v/de.douglas.maven.plugin/rpm-systemd-maven-plugin.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22de.douglas.maven.plugin%22%20AND%20a%3A%22rpm-systemd-maven-plugin%22)
+
 ## Usage
 
 The plugin currently supports two goals:

@@ -1,4 +1,4 @@
-# RPM Systemd Maven Plugin
+# RPM systemd Maven Plugin
 
 This plugin can be used to generate files for RPM packages and systemd
 services.

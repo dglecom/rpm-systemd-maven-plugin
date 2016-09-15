@@ -76,6 +76,23 @@ public class PostInstMojoTest extends AbstractHarnessMojoTestCase {
         );
     }
 
+    public void testGenerateRpmPostInstFileWithAdditionalDirectoriesWithoutUserAndGroup() throws Exception {
+        final Path testBaseDir = createDir(postInstTestsBaseDir.resolve("additional-directories-without-user-and-group"));
+        createDir(testBaseDir.resolve("target"));
+
+        File pom = getTestFile(postInstSrcDir.resolve("pom-additional-directories-without-user-and-group.xml").toString());
+
+        PostInstMojo postInstMojo = (PostInstMojo) lookupMojo("generate-rpm-postinst-file", pom);
+        postInstMojo.execute();
+
+        assertTrue(
+                "Generated postinst file does not equal expected one", FileUtils.contentEquals(
+                        postInstSrcDir.resolve("postinst-additional-directories-without-user-and-group-expected").toFile(),
+                        testBaseDir.resolve("target").resolve("rpm-systemd-maven-plugin").resolve("postinst").toFile()
+                )
+        );
+    }
+
     public void tearDown() throws IOException {
         FileUtils.deleteDirectory(postInstTestsBaseDir.toFile());
     }

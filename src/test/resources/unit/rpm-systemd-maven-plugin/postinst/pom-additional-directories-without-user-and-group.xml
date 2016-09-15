@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>de.douglas.maven.plugin</groupId>
+    <artifactId>rpm-systemd-maven-plugin-test-module</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>RPM Systemd Maven Plugin - Test module</name>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>rpm-systemd-maven-plugin</artifactId>
+                <configuration>
+                    <baseDirectory>target/test-harness/rpm-systemd-maven-plugin/postinst/additional-directories-without-user-and-group</baseDirectory>
+                    <workingDirectoryPath>/path/to/workingDirectory</workingDirectoryPath>
+                    <environmentFilePath>/environmentfile</environmentFilePath>
+                    <systemdServiceFileName>some.service</systemdServiceFileName>
+                    <user>makubi</user>
+                    <group>some-group</group>
+                    <additionalDirectories>
+                        <additionalDirectory>
+                            <directory>/path/to/some/directory</directory>
+                        </additionalDirectory>
+                    </additionalDirectories>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -72,7 +72,7 @@ public class PostInstMojo extends AbstractMojo {
             if(dirConf.getDirectory() == null) throw new MojoFailureException("<additionalDirectory> element must contain the directory");
 
             if(dirConf.getUser() == null) dirConf.setUser(user);
-            if(dirConf.getGroup() == null) dirConf.setUser(group);
+            if(dirConf.getGroup() == null) dirConf.setGroup(group);
         }
     }
 }

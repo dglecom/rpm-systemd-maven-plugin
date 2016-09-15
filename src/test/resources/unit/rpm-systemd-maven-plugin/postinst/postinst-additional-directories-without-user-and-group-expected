@@ -1,0 +1,12 @@
+
+test -f /environmentfile || echo 'JAVA_OPTS=""' > /environmentfile
+getent group some-group || groupadd -r some-group >/dev/null 2>&1
+getent passwd makubi || useradd -s /bin/false -d /path/to/workingDirectory -g some-group -r -m makubi >/dev/null 2>&1
+
+test -d /path/to/workingDirectory || mkdir /path/to/workingDirectory >/dev/null 2>&1
+test -d /path/to/workingDirectory && chown -R makubi:some-group /path/to/workingDirectory >/dev/null 2>&1
+
+/usr/bin/systemctl preset some.service >/dev/null 2>&1
+
+test -d /path/to/some/directory || mkdir /path/to/some/directory >/dev/null 2>&1
+test -d /path/to/some/directory && chown -R makubi:some-group /path/to/some/directory >/dev/null 2>&1
